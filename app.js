@@ -5,6 +5,8 @@ const path = require('path')
 const { create } = require('domain')
 const app = express()
 
+const port = process.env.PORT || 5000
+
 app.use(bodyParser.json())
 
 const Public_Key = 'BADK6PW8_cDnvEWIW_s8WYi2naw7waCkDtfi95jW3k9CV0aydoeTVw9eg0o9DW0dNMZGDlXmsxROyARXb41bSvA'
@@ -34,8 +36,8 @@ app.post('/subscribe', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server running on 3000')
+app.listen(port, () => {
+    console.log('Server running on ', port)
 })
 
 
